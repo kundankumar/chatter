@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     user2 = User.find(params[:user_id2])
     if user1 && user2
       user1.follow(user2)
-      render json: user1.following, status: :ok
+      render json: user1.followings, status: :ok
     else
-      render json: { errors: user1.following.full_messages }, status: 422
+      render json: { errors: user1.followings.full_messages }, status: 422
     end
   end
 
