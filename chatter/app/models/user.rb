@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
  # e) tweet timeline
  def timeline
-   followings.includes(:tweets)
+   followings.includes(:tweets).map {|u| u.tweets }.flatten
  end
 
 
